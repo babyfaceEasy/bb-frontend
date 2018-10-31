@@ -1,35 +1,45 @@
 <template>
-  <div class="hello">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <h1>This is homepage</h1>
-    <h2>{{msg}}</h2>
-  </div>
+  <b-container>
+    <b-row>
+      <b-col cols="8">
+        <h1>Logo</h1>
+      </b-col>
+      <b-col cols="4">
+        <!-- Links to the login / register section -->
+        <h4>Links</h4>
+      </b-col>
+    </b-row>
+    <b-row>
+      <!-- google maps -->
+      <b-col>
+        <GmapMap ref="mapRef" :center="{lat:10, lng:10}" :zoom="7" map-type-id="terrain" style="height: 670px">
+          <GmapMarker
+            :key="index"
+            v-for="(m, index) in markers"
+            :position="m.position"
+            :clickable="true"
+            :draggable="true"
+            @click="center=m.position"
+          />
+        </GmapMap>
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 
 <script>
 export default {
-  data (){
-    return {
-      msg: 'Hello World!'
-    }
+  /*
+  mounted () {
+    this.$refs.mapRef.$mapPromise.then((map) => {
+      map.panTo({lat: 1.38, lng: 103.80})
+    })
   }
+  */
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li{
-  display: inline-block;
-  margin: 0 10px;
-}
-a{
-  color: #42b983;
-}
+
 </style>
+
