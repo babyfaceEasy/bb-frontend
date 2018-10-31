@@ -1,4 +1,5 @@
 # billboard-frontend
+This project is the frontend implementation for the billboard project.
 
 ## Project setup
 ```
@@ -24,4 +25,3 @@ npm run test
 ```
 npm run lint
 ```
-# bb-frontend
