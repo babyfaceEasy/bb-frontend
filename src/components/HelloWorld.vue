@@ -6,21 +6,16 @@
       </b-col>
       <b-col cols="4">
         <!-- Links to the login / register section -->
-        <h4>Links</h4>
+        <h4>
+          <router-link to ="/login">Login</router-link> | <router-link to ="/register">Register</router-link>
+        </h4>
       </b-col>
     </b-row>
-    <b-row>
+    <b-row style="">
       <!-- google maps -->
       <b-col>
         <GmapMap ref="mapRef" :center="{lat:10, lng:10}" :zoom="7" map-type-id="terrain" style="height: 670px">
-          <GmapMarker
-            :key="index"
-            v-for="(m, index) in markers"
-            :position="m.position"
-            :clickable="true"
-            :draggable="true"
-            @click="center=m.position"
-          />
+          
         </GmapMap>
       </b-col>
     </b-row>
@@ -29,13 +24,13 @@
 
 <script>
 export default {
-  /*
+  
   mounted () {
     this.$refs.mapRef.$mapPromise.then((map) => {
-      map.panTo({lat: 1.38, lng: 103.80})
+      map.panTo({lat: 10, lng: 10})
     })
   }
-  */
+  
 }
 </script>
 
