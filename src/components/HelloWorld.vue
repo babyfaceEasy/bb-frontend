@@ -7,7 +7,7 @@
       <b-col cols="4">
         <!-- Links to the login / register section -->
         <h4>
-          <router-link to ="/login">Login</router-link> | <router-link to ="/register">Register</router-link>
+          <b-link to ="/login">Login</b-link> | <b-link to ="/register">Register</b-link>
         </h4>
       </b-col>
     </b-row>

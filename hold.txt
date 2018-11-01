@@ -1,0 +1,21 @@
+<div>
+        
+
+    <form>
+        <label for="email">E-mail Address</label>
+        <div>
+            <input type="email" id="email" v-model="email" required autofocus>
+        </div>
+
+        <div>
+            <label for="password">Password</label>
+            <div>
+                <input type="password" v-model="password" id="password">
+            </div>
+        </div>
+
+        <div>
+            <button type="submit" @click="handleSubmit">Login</button>
+        </div>
+    </form>
+</div>
