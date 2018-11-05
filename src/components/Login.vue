@@ -78,16 +78,15 @@ export default {
         },
         onSubmit(e){
             e.preventDefault()
-            alert(this.email)
             this.$http.post('http://localhost:8088/auth/login', {
                 email : this.email,
                 password : this.password
             })
-            .then(() => {
+            .then((resp) => {
                 alert(`success`)
-                //localStorage.setItem('user', JSON.stringify(resp.data.user))
-                //localStorage.setItem('jwt', resp.data.token)
-                /*
+                localStorage.setItem('user', JSON.stringify(resp.data.user))
+                localStorage.setItem('jwt', resp.data.token)
+                
                 if (localStorage.getItem('jwt') !== null) {
                     this.$emit('loggedIn')
 
@@ -97,7 +96,7 @@ export default {
                         this.$router.push('dashboard')
                     }
                 }
-                */
+                
             })
             .catch( error => {
                 alert(error)

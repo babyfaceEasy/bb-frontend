@@ -14,9 +14,11 @@
     <b-row style="">
       <!-- google maps -->
       <b-col>
+        <!--
         <GmapMap ref="mapRef" :center="{lat:10, lng:10}" :zoom="7" map-type-id="terrain" style="height: 670px">
           
         </GmapMap>
+        -->
       </b-col>
     </b-row>
   </b-container>
@@ -24,12 +26,13 @@
 
 <script>
 export default {
-  
+  /*
   mounted () {
     this.$refs.mapRef.$mapPromise.then((map) => {
       map.panTo({lat: 10, lng: 10})
     })
   }
+  */
   
 }
 </script>
